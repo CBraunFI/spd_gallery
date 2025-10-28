@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://YOUR-USERNAME.github.io',
-  base: '/spd-gallery',
+  site: 'https://cbraunfi.github.io',
+  base: '/spd_gallery',
   outDir: './dist',
   build: {
     assets: 'assets'
