@@ -1,10 +1,35 @@
 [
   {
-    "id": "2025-10-26_Julian_Brenner",
-    "src": "/img/originals/2025-10-26_Julian_Brenner.jpg",
-    "thumb": "/img/thumbs/2025-10-26_Julian_Brenner-640.webp",
-    "w": 1600,
-    "h": 1157,
+    "id": "2025-10-26_Auftakt_135_Jahre_SPD_Langenselbold",
+    "src": "/img/originals/2025-10-26_Auftakt_135_Jahre_SPD_Langenselbold.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Auftakt_135_Jahre_SPD_Langenselbold-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "135 Jahre",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Auftakt",
+      "Jahre",
+      "Langenselbold"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025",
+      "#135Jahre"
+    ],
+    "alt": "Auftakt 135 Jahre SPD Langenselbold"
+  },
+  {
+    "id": "2025-10-26_Christoph_Degen_Wolfgang_Rittershauss_Julian_Brenner",
+    "src": "/img/originals/2025-10-26_Christoph_Degen_Wolfgang_Rittershauss_Julian_Brenner.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Christoph_Degen_Wolfgang_Rittershauss_Julian_Brenner-640.webp",
+    "w": 5776,
+    "h": 3848,
     "title": "Inhalt wird nachgetragen.",
     "caption": "Inhalt wird nachgetragen.",
     "credit": "Foto: SPD Langenselbold",
@@ -12,14 +37,119 @@
     "event": "Inhalt wird nachgetragen.",
     "location": "Inhalt wird nachgetragen.",
     "people": [
-      "Julian Brenner"
+      "Christoph",
+      "Degen",
+      "Wolfgang",
+      "Rittershauss",
+      "Julian",
+      "Brenner"
     ],
     "tags": [],
     "hashtags": [
       "#SPDLangenselbold",
       "#2025"
     ],
+    "alt": "Christoph Degen Wolfgang Rittershauss Julian Brenner"
+  },
+  {
+    "id": "2025-10-26_Dannyjune_Smith",
+    "src": "/img/originals/2025-10-26_Dannyjune_Smith.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Dannyjune_Smith-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "Inhalt wird nachgetragen.",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Dannyjune",
+      "Smith"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025"
+    ],
+    "alt": "Dannyjune Smith"
+  },
+  {
+    "id": "2025-10-26_Empfang_135_Jahre_SPD_Langenselbold",
+    "src": "/img/originals/2025-10-26_Empfang_135_Jahre_SPD_Langenselbold.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Empfang_135_Jahre_SPD_Langenselbold-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "135 Jahre",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Empfang",
+      "Jahre",
+      "Langenselbold"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025",
+      "#135Jahre"
+    ],
+    "alt": "Empfang 135 Jahre SPD Langenselbold"
+  },
+  {
+    "id": "2025-10-26_Julian_Brenner",
+    "src": "/img/originals/2025-10-26_Julian_Brenner.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Julian_Brenner-640.webp",
+    "w": 1600,
+    "h": 1157,
+    "title": "Julian Brenner",
+    "caption": "OV-Vorsitzender Julian Brenner begrüßt die Gäste zur Feierstunde anlässlich des 135. Jubiläums der SPD Langenselbold",
+    "credit": "Foto: Karlheinz Bär",
+    "year": 2025,
+    "event": "135-Jahr-Feier",
+    "location": "Langenselbolder Schloss",
+    "people": [
+      "Julian Brenner"
+    ],
+    "tags": [
+      135
+    ],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025",
+      "#135JahreSPDLangenselbold"
+    ],
     "alt": "Julian Brenner"
+  },
+  {
+    "id": "2025-10-26_Julian_Brenner_Annette_Fehlhauer_Wolfgang_Rittershauss",
+    "src": "/img/originals/2025-10-26_Julian_Brenner_Annette_Fehlhauer_Wolfgang_Rittershauss.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Julian_Brenner_Annette_Fehlhauer_Wolfgang_Rittershauss-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "Inhalt wird nachgetragen.",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Julian",
+      "Brenner",
+      "Annette",
+      "Fehlhauer",
+      "Wolfgang",
+      "Rittershauss"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025"
+    ],
+    "alt": "Julian Brenner Annette Fehlhauer Wolfgang Rittershauss"
   },
   {
     "id": "2025-10-26_Roland_Sahler",
@@ -27,19 +157,20 @@
     "thumb": "/img/thumbs/2025-10-26_Roland_Sahler-640.webp",
     "w": 1407,
     "h": 1299,
-    "title": "Inhalt wird nachgetragen.",
-    "caption": "Inhalt wird nachgetragen.",
-    "credit": "Foto: SPD Langenselbold",
+    "title": "Roland Sahler erhält die Willy-Brandt-Medaille",
+    "caption": "Roland Sahler ist auf der 135-Jahr-Feier der SPD Langenselbold für sein langjähriges und vielfältiges Engagement mit der Willy-Brandt-Medaille ausgezeichnet worden.",
+    "credit": "Foto: Karlheinz Bär",
     "year": 2025,
-    "event": "Inhalt wird nachgetragen.",
-    "location": "Inhalt wird nachgetragen.",
+    "event": "135-Jahr-Feier",
+    "location": "Langenselbolder Schloss.",
     "people": [
       "Roland Sahler"
     ],
     "tags": [],
     "hashtags": [
       "#SPDLangenselbold",
-      "#2025"
+      "#2025",
+      "#135JahreSPDLangenselbold"
     ],
     "alt": "Roland Sahler"
   },
@@ -49,19 +180,20 @@
     "thumb": "/img/thumbs/2025-10-26_Schustergedicht-640.webp",
     "w": 1600,
     "h": 1259,
-    "title": "Inhalt wird nachgetragen.",
-    "caption": "Inhalt wird nachgetragen.",
-    "credit": "Foto: SPD Langenselbold",
+    "title": "Das Schustergedicht über den frühen Sozialdemokraten Droith",
+    "caption": "Dieses Spottgedicht kursierte in den 1880er Jahren in Langenselbold. Sein Gegenstand: Der Schuster Droith, einer der frühen bekennenden Sozialisten in Langenselbold.",
+    "credit": "Foto: Karlheinz Bär",
     "year": 2025,
-    "event": "Inhalt wird nachgetragen.",
-    "location": "Inhalt wird nachgetragen.",
+    "event": "135-Jahr-Feier",
+    "location": "Langenselbolder Schloss",
     "people": [],
     "tags": [
       "Schustergedicht"
     ],
     "hashtags": [
       "#SPDLangenselbold",
-      "#2025"
+      "#2025",
+      "#135JahreSPDLangenselbold"
     ],
     "alt": "Schustergedicht"
   },
@@ -71,6 +203,55 @@
     "thumb": "/img/thumbs/2025-10-26_Soeren_bartol-640.webp",
     "w": 1600,
     "h": 1208,
+    "title": "Sören Bartol MdB spricht bei der 135-Jahr-Feier der SPD Langenselbold",
+    "caption": "MdB Sören Bartol gratuliert der SPD Langenselbold zum 135-jährigen Bestehen.",
+    "credit": "Foto: Karlheinz Bär",
+    "year": 2025,
+    "event": "135-Jahr-Feier",
+    "location": "Langenselbolder Schloss",
+    "people": [
+      "Sören Bartol"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025",
+      "#135JahreSPDLangenselbold"
+    ],
+    "alt": "Sören Bartol"
+  },
+  {
+    "id": "2025-10-26_Soeren_Bartol_135_Jahre_SPD_Langenselbold",
+    "src": "/img/originals/2025-10-26_Soeren_Bartol_135_Jahre_SPD_Langenselbold.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Soeren_Bartol_135_Jahre_SPD_Langenselbold-640.webp",
+    "w": 1368,
+    "h": 912,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "135 Jahre",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Soeren",
+      "Bartol",
+      "Jahre",
+      "Langenselbold"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025",
+      "#135Jahre"
+    ],
+    "alt": "Soeren Bartol 135 Jahre SPD Langenselbold"
+  },
+  {
+    "id": "2025-10-26_Timo_Greuel",
+    "src": "/img/originals/2025-10-26_Timo_Greuel.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Timo_Greuel-640.webp",
+    "w": 5776,
+    "h": 3848,
     "title": "Inhalt wird nachgetragen.",
     "caption": "Inhalt wird nachgetragen.",
     "credit": "Foto: SPD Langenselbold",
@@ -78,14 +259,124 @@
     "event": "Inhalt wird nachgetragen.",
     "location": "Inhalt wird nachgetragen.",
     "people": [
-      "Sören Bartol"
+      "Timo",
+      "Greuel"
     ],
     "tags": [],
     "hashtags": [
       "#SPDLangenselbold",
       "#2025"
     ],
-    "alt": "Sören Bartol"
+    "alt": "Timo Greuel"
+  },
+  {
+    "id": "2025-10-26_Timo_Greuel_im_Gespraech",
+    "src": "/img/originals/2025-10-26_Timo_Greuel_im_Gespraech.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Timo_Greuel_im_Gespraech-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "Inhalt wird nachgetragen.",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Timo",
+      "Greuel",
+      "Gespraech"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025"
+    ],
+    "alt": "Timo Greuel im Gespraech"
+  },
+  {
+    "id": "2025-10-26_Timo_Greuel_Juergen_Schonlau_Roland_Sahler",
+    "src": "/img/originals/2025-10-26_Timo_Greuel_Juergen_Schonlau_Roland_Sahler.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Timo_Greuel_Juergen_Schonlau_Roland_Sahler-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "Inhalt wird nachgetragen.",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Timo",
+      "Greuel",
+      "Juergen",
+      "Schonlau",
+      "Roland",
+      "Sahler"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025"
+    ],
+    "alt": "Timo Greuel Juergen Schonlau Roland Sahler"
+  },
+  {
+    "id": "2025-10-26_Timo_Greuel_Roland_Sahler_Soeren_Bartol",
+    "src": "/img/originals/2025-10-26_Timo_Greuel_Roland_Sahler_Soeren_Bartol.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Timo_Greuel_Roland_Sahler_Soeren_Bartol-640.webp",
+    "w": 1600,
+    "h": 1298,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "Inhalt wird nachgetragen.",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Timo",
+      "Greuel",
+      "Roland",
+      "Sahler",
+      "Soeren",
+      "Bartol"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025"
+    ],
+    "alt": "Timo Greuel Roland Sahler Soeren Bartol"
+  },
+  {
+    "id": "2025-10-26_Timo_Greuel_Soeren_Bartol_Wolfgang_Rittershauss_Bettina_Schonlau_Julian_Brenner",
+    "src": "/img/originals/2025-10-26_Timo_Greuel_Soeren_Bartol_Wolfgang_Rittershauss_Bettina_Schonlau_Julian_Brenner.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Timo_Greuel_Soeren_Bartol_Wolfgang_Rittershauss_Bettina_Schonlau_Julian_Brenner-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "Inhalt wird nachgetragen.",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Timo",
+      "Greuel",
+      "Soeren",
+      "Bartol",
+      "Wolfgang",
+      "Rittershauss",
+      "Bettina",
+      "Schonlau",
+      "Julian",
+      "Brenner"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025"
+    ],
+    "alt": "Timo Greuel Soeren Bartol Wolfgang Rittershauss Bettina Schonlau Julian Brenner"
   },
   {
     "id": "2025-10-26_Willy-Brandt-Medaille_Roland_Sahler",
@@ -93,12 +384,12 @@
     "thumb": "/img/thumbs/2025-10-26_Willy-Brandt-Medaille_Roland_Sahler-640.webp",
     "w": 1834,
     "h": 1402,
-    "title": "Inhalt wird nachgetragen.",
-    "caption": "Inhalt wird nachgetragen.",
-    "credit": "Foto: SPD Langenselbold",
+    "title": "Roland Sahler erhält die Willy-Brandt-Medaille",
+    "caption": "Von links: Roland Sahler, Julian Brenner, Timo Greuel, Sören Bartol",
+    "credit": "Foto: Karlheinz Bärl",
     "year": 2025,
-    "event": "Inhalt wird nachgetragen.",
-    "location": "Inhalt wird nachgetragen.",
+    "event": "135-Jahr-Feier",
+    "location": "Langenselbolder Schloss",
     "people": [
       "Roland Sahler"
     ],
@@ -108,7 +399,8 @@
     "hashtags": [
       "#SPDLangenselbold",
       "#2025",
-      "#WillyBrandtMedaille"
+      "#WillyBrandtMedaille",
+      "#135JahreSPDLangenselbold"
     ],
     "alt": "Willy-Brandt-Medaille - Roland Sahler"
   },
@@ -118,12 +410,12 @@
     "thumb": "/img/thumbs/2025-10-26_Willy-Brandt-Medaille_Roland_Sahler_2-640.webp",
     "w": 1600,
     "h": 1307,
-    "title": "Inhalt wird nachgetragen.",
-    "caption": "Inhalt wird nachgetragen.",
-    "credit": "Foto: SPD Langenselbold",
+    "title": "Roland Sahler mit Willy-Brandt-Medaille ausgezeichnet",
+    "caption": "Von links: Christoph Degen, Wolfgang Rittershauß, Roland Sahler, Julian Brenner, Timo Greuel, Sören Bartol",
+    "credit": "Foto: Karlheinz Bär",
     "year": 2025,
-    "event": "Inhalt wird nachgetragen.",
-    "location": "Inhalt wird nachgetragen.",
+    "event": "135-Jahr-Feier",
+    "location": "Langenselbolder Schloss",
     "people": [
       "Roland Sahler"
     ],
@@ -133,7 +425,8 @@
     "hashtags": [
       "#SPDLangenselbold",
       "#2025",
-      "#WillyBrandtMedaille"
+      "#WillyBrandtMedaille",
+      "#135JahreSPDLangenselbold"
     ],
     "alt": "Willy-Brandt-Medaille - Roland Sahler"
   },
@@ -143,6 +436,55 @@
     "thumb": "/img/thumbs/2025-10-26_Wolfgang_Rittershauss-640.webp",
     "w": 1514,
     "h": 1509,
+    "title": "Wolfgang Rittershauß spricht bei der 135-Jahr-Feier der SPD Langenselbold",
+    "caption": "Bürgermeisterkandidat Wolfgang Rittershauß wendet sich bei der 135-Jahr-Feier der SPD Langenselbold an die Gäste. Er bezeichnet die Frage nach bezahlbarem Wohnraum als die soziale Frage unserer Zeit.",
+    "credit": "Foto: Karlheinz Bär",
+    "year": 2025,
+    "event": "135-Jahr-Feier",
+    "location": "Langenselbolder Schloss",
+    "people": [
+      "Wolfgang Rittershauß"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025",
+      "#135JahreSPDLangenselbold"
+    ],
+    "alt": "Wolfgang Rittershauß"
+  },
+  {
+    "id": "2025-10-26_Wolfgang_Rittershauss_135_Jahr_Feier",
+    "src": "/img/originals/2025-10-26_Wolfgang_Rittershauss_135_Jahr_Feier.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Wolfgang_Rittershauss_135_Jahr_Feier-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "135 Jahre",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Wolfgang",
+      "Rittershauss",
+      "Jahr",
+      "Feier"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025",
+      "#135Jahre"
+    ],
+    "alt": "Wolfgang Rittershauss 135 Jahr Feier"
+  },
+  {
+    "id": "2025-10-26_Wolfgang_Rittershauss_Julian_Brenner_1",
+    "src": "/img/originals/2025-10-26_Wolfgang_Rittershauss_Julian_Brenner_1.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Wolfgang_Rittershauss_Julian_Brenner_1-640.webp",
+    "w": 5776,
+    "h": 3848,
     "title": "Inhalt wird nachgetragen.",
     "caption": "Inhalt wird nachgetragen.",
     "credit": "Foto: SPD Langenselbold",
@@ -150,13 +492,41 @@
     "event": "Inhalt wird nachgetragen.",
     "location": "Inhalt wird nachgetragen.",
     "people": [
-      "Wolfgang Rittershauß"
+      "Wolfgang",
+      "Rittershauss",
+      "Julian",
+      "Brenner"
     ],
     "tags": [],
     "hashtags": [
       "#SPDLangenselbold",
       "#2025"
     ],
-    "alt": "Wolfgang Rittershauß"
+    "alt": "Wolfgang Rittershauss Julian Brenner 1"
+  },
+  {
+    "id": "2025-10-26_Wolfgang_Rittershauss_Julian_Brenner_2",
+    "src": "/img/originals/2025-10-26_Wolfgang_Rittershauss_Julian_Brenner_2.jpg",
+    "thumb": "/img/thumbs/2025-10-26_Wolfgang_Rittershauss_Julian_Brenner_2-640.webp",
+    "w": 5776,
+    "h": 3848,
+    "title": "Inhalt wird nachgetragen.",
+    "caption": "Inhalt wird nachgetragen.",
+    "credit": "Foto: SPD Langenselbold",
+    "year": 2025,
+    "event": "Inhalt wird nachgetragen.",
+    "location": "Inhalt wird nachgetragen.",
+    "people": [
+      "Wolfgang",
+      "Rittershauss",
+      "Julian",
+      "Brenner"
+    ],
+    "tags": [],
+    "hashtags": [
+      "#SPDLangenselbold",
+      "#2025"
+    ],
+    "alt": "Wolfgang Rittershauss Julian Brenner 2"
   }
 ]
