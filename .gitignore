@@ -7,11 +7,6 @@ dist/
 
 # Generated files
 public/img/thumbs/
-src/data/images.json
-
-# Keep originals folder structure but ignore images
-public/img/originals/*
-!public/img/originals/.gitkeep
 
 # IDE
 .vscode/
