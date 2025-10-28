@@ -7,6 +7,7 @@ const THUMBS = 'public/img/thumbs';
 const OUT = 'src/data/images.json';
 
 await fs.promises.mkdir(THUMBS, { recursive: true });
+await fs.promises.mkdir(path.dirname(OUT), { recursive: true });
 const files = (await fs.promises.readdir(ORIG))
   .filter(f => /\.(jpe?g|png|webp|avif|heic)$/i.test(f));
 
