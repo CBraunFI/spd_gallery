@@ -43,8 +43,13 @@ const baseUrl = import.meta.env.BASE_URL || '/';
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script is:inline define:vars={{ images, baseUrl }}>
-    // Data
-    window.GALLERY_DATA = images;
+    // Data - Fix paths to include base URL
+    const fixedImages = images.map(img => ({
+      ...img,
+      src: baseUrl + img.src,
+      thumb: baseUrl + img.thumb
+    }));
+    window.GALLERY_DATA = fixedImages;
     window.BASE_URL = baseUrl;
   </script>
 
