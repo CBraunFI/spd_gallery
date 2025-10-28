@@ -8,8 +8,20 @@ const OUT = 'src/data/images.json';
 
 await fs.promises.mkdir(THUMBS, { recursive: true });
 await fs.promises.mkdir(path.dirname(OUT), { recursive: true });
-const files = (await fs.promises.readdir(ORIG))
-  .filter(f => /\.(jpe?g|png|webp|avif|heic)$/i.test(f));
+
+// Check if originals directory exists
+let files = [];
+try {
+  files = (await fs.promises.readdir(ORIG))
+    .filter(f => /\.(jpe?g|png|webp|avif|heic)$/i.test(f));
+} catch (err) {
+  if (err.code === 'ENOENT') {
+    console.log('No originals directory found, creating empty images.json');
+    await fs.promises.mkdir(ORIG, { recursive: true });
+  } else {
+    throw err;
+  }
+}
 
 const items = [];
 for (const f of files) {
