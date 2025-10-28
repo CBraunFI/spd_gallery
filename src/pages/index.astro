@@ -1,0 +1,416 @@
+---
+import images from '../data/images.json';
+import '../styles/gallery.css';
+const baseUrl = import.meta.env.BASE_URL || '/';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPD Langenselbold Fotogalerie</title>
+  <meta name="description" content="Fotogalerie der SPD Langenselbold mit Bildern von Veranstaltungen, Feiern und Events" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-content">
+      <h1>SPD Langenselbold</h1>
+      <div class="controls">
+        <input type="search" id="search" placeholder="Suchen..." aria-label="Suche" />
+        <select id="filterYear" aria-label="Jahr filtern">
+          <option value="">Alle Jahre</option>
+        </select>
+        <select id="filterEvent" aria-label="Event filtern">
+          <option value="">Alle Events</option>
+        </select>
+        <select id="clusterBy" aria-label="Gruppieren nach">
+          <option value="">Keine Gruppierung</option>
+          <option value="year">Nach Jahr</option>
+          <option value="event">Nach Event</option>
+          <option value="location">Nach Ort</option>
+          <option value="person">Nach Person</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div id="hashtagBar" class="hashtag-bar" aria-label="Hashtag Filter"></div>
+
+  <main id="gallery-container" class="gallery-container"></main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script is:inline define:vars={{ images, baseUrl }}>
+    // Data
+    window.GALLERY_DATA = images;
+    window.BASE_URL = baseUrl;
+  </script>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe.umd.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe-lightbox.umd.min.js"></script>
+
+  <script is:inline>
+    // State
+    let filteredImages = [...window.GALLERY_DATA];
+    let searchQuery = '';
+    let selectedYear = '';
+    let selectedEvent = '';
+    let selectedHashtags = new Set();
+    let clusterMode = '';
+    let fuse;
+    let lightbox;
+
+    // Initialize Fuse.js
+    function initFuse() {
+      fuse = new Fuse(window.GALLERY_DATA, {
+        keys: [
+          { name: 'title', weight: 3 },
+          { name: 'caption', weight: 2 },
+          { name: 'tags', weight: 2 },
+          { name: 'people', weight: 2 },
+          { name: 'location', weight: 1.5 },
+          { name: 'event', weight: 1.5 },
+          { name: 'hashtags', weight: 1 }
+        ],
+        threshold: 0.3,
+        ignoreLocation: true
+      });
+    }
+
+    // Filter logic
+    function applyFilters() {
+      let results = [...window.GALLERY_DATA];
+
+      // Search
+      if (searchQuery) {
+        const fuseResults = fuse.search(searchQuery);
+        results = fuseResults.map(r => r.item);
+      }
+
+      // Year filter
+      if (selectedYear) {
+        results = results.filter(img => img.year === parseInt(selectedYear));
+      }
+
+      // Event filter
+      if (selectedEvent) {
+        results = results.filter(img => img.event === selectedEvent);
+      }
+
+      // Hashtag filter
+      if (selectedHashtags.size > 0) {
+        results = results.filter(img =>
+          img.hashtags.some(tag => selectedHashtags.has(tag))
+        );
+      }
+
+      filteredImages = results;
+      renderGallery();
+    }
+
+    // Render gallery
+    function renderGallery() {
+      const container = document.getElementById('gallery-container');
+
+      if (clusterMode) {
+        container.innerHTML = renderClustered();
+      } else {
+        container.innerHTML = `<ul class="grid">${filteredImages.map(renderTile).join('')}</ul>`;
+      }
+
+      // Update photoswipe
+      initPhotoSwipe();
+
+      // Notify parent iframe
+      notifyHeight();
+    }
+
+    // Render single tile
+    function renderTile(img, includeGroupAttr = false) {
+      const shareBtn = `<button class="share-btn" data-id="${img.id}" aria-label="Teilen" title="Teilen">⤴</button>`;
+      const hashtags = img.hashtags.map(tag =>
+        `<span class="hashtag" data-tag="${tag}">${tag}</span>`
+      ).join(' ');
+
+      return `
+        <li class="tile" ${includeGroupAttr ? 'data-group="true"' : ''}>
+          <a href="${img.src}"
+             data-pswp-width="${img.w}"
+             data-pswp-height="${img.h}"
+             data-pswp-id="${img.id}"
+             target="_blank">
+            <img src="${img.thumb}"
+                 alt="${img.alt}"
+                 loading="lazy"
+                 decoding="async" />
+            ${shareBtn}
+          </a>
+          <div class="caption">
+            <strong>${img.title}</strong>
+            ${img.caption ? `<p>${img.caption}</p>` : ''}
+            <div class="hashtags">${hashtags}</div>
+          </div>
+        </li>
+      `;
+    }
+
+    // Render clustered view
+    function renderClustered() {
+      const groups = {};
+
+      filteredImages.forEach(img => {
+        let key;
+        if (clusterMode === 'year') key = img.year || 'Unbekannt';
+        else if (clusterMode === 'event') key = img.event || 'Unbekannt';
+        else if (clusterMode === 'location') key = img.location || 'Unbekannt';
+        else if (clusterMode === 'person') {
+          img.people.forEach(person => {
+            if (!groups[person]) groups[person] = [];
+            groups[person].push(img);
+          });
+          return;
+        }
+
+        if (clusterMode !== 'person') {
+          if (!groups[key]) groups[key] = [];
+          groups[key].push(img);
+        }
+      });
+
+      const sortedKeys = Object.keys(groups).sort((a, b) => {
+        if (clusterMode === 'year') return parseInt(b) - parseInt(a);
+        return a.localeCompare(b);
+      });
+
+      return sortedKeys.map(key => `
+        <section class="cluster">
+          <h2 class="cluster-title">${key}</h2>
+          <ul class="grid">
+            ${groups[key].map(img => renderTile(img, true)).join('')}
+          </ul>
+        </section>
+      `).join('');
+    }
+
+    // Initialize PhotoSwipe
+    function initPhotoSwipe() {
+      if (lightbox) {
+        lightbox.destroy();
+      }
+
+      lightbox = new PhotoSwipeLightbox({
+        gallery: '.grid',
+        children: 'a',
+        pswpModule: PhotoSwipe,
+        padding: { top: 20, bottom: 40, left: 20, right: 20 }
+      });
+
+      // Add share button to lightbox
+      lightbox.on('uiRegister', function() {
+        lightbox.pswp.ui.registerElement({
+          name: 'share-button',
+          order: 9,
+          isButton: true,
+          html: '<button class="pswp__button pswp__button--share" title="Teilen">⤴</button>',
+          onClick: (event, el) => {
+            const img = filteredImages.find(i => i.id === lightbox.pswp.currSlide.data.element.dataset.pswpId);
+            if (img) shareImage(img);
+          }
+        });
+      });
+
+      lightbox.init();
+    }
+
+    // Share functionality
+    async function shareImage(img) {
+      const url = `${window.location.origin}${window.location.pathname}?id=${img.id}`;
+      const text = `${img.title} - SPD Langenselbold`;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: text, url });
+          showToast('Erfolgreich geteilt!');
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            copyToClipboard(url);
+          }
+        }
+      } else {
+        copyToClipboard(url);
+      }
+    }
+
+    function copyToClipboard(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('Link kopiert!');
+        });
+      } else {
+        // Fallback
+        const el = document.createElement('textarea');
+        el.value = text;
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        showToast('Link kopiert!');
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // Populate filters
+    function populateFilters() {
+      const years = [...new Set(window.GALLERY_DATA.map(img => img.year).filter(Boolean))].sort((a, b) => b - a);
+      const events = [...new Set(window.GALLERY_DATA.map(img => img.event).filter(Boolean))].sort();
+
+      const yearSelect = document.getElementById('filterYear');
+      years.forEach(year => {
+        const opt = document.createElement('option');
+        opt.value = year;
+        opt.textContent = year;
+        yearSelect.appendChild(opt);
+      });
+
+      const eventSelect = document.getElementById('filterEvent');
+      events.forEach(event => {
+        const opt = document.createElement('option');
+        opt.value = event;
+        opt.textContent = event;
+        eventSelect.appendChild(opt);
+      });
+    }
+
+    // Populate hashtag bar
+    function populateHashtags() {
+      const allHashtags = new Set();
+      window.GALLERY_DATA.forEach(img => {
+        img.hashtags.forEach(tag => allHashtags.add(tag));
+      });
+
+      const bar = document.getElementById('hashtagBar');
+      bar.innerHTML = [...allHashtags].sort().map(tag =>
+        `<button class="hashtag-pill" data-tag="${tag}">${tag}</button>`
+      ).join('');
+    }
+
+    // Event listeners
+    function attachListeners() {
+      document.getElementById('search').addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        applyFilters();
+      });
+
+      document.getElementById('filterYear').addEventListener('change', (e) => {
+        selectedYear = e.target.value;
+        applyFilters();
+      });
+
+      document.getElementById('filterEvent').addEventListener('change', (e) => {
+        selectedEvent = e.target.value;
+        applyFilters();
+      });
+
+      document.getElementById('clusterBy').addEventListener('change', (e) => {
+        clusterMode = e.target.value;
+        renderGallery();
+      });
+
+      // Share buttons in grid
+      document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('share-btn')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const id = e.target.dataset.id;
+          const img = window.GALLERY_DATA.find(i => i.id === id);
+          if (img) shareImage(img);
+        }
+
+        // Hashtag clicks
+        if (e.target.classList.contains('hashtag') || e.target.classList.contains('hashtag-pill')) {
+          const tag = e.target.dataset.tag;
+          if (selectedHashtags.has(tag)) {
+            selectedHashtags.delete(tag);
+            e.target.classList.remove('active');
+          } else {
+            selectedHashtags.add(tag);
+            e.target.classList.add('active');
+          }
+          applyFilters();
+        }
+      });
+
+      // Keyboard accessibility
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          selectedHashtags.clear();
+          document.querySelectorAll('.hashtag-pill.active, .hashtag.active').forEach(el => {
+            el.classList.remove('active');
+          });
+          applyFilters();
+        }
+      });
+    }
+
+    // Deep link support
+    function handleDeepLink() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      if (id) {
+        const index = filteredImages.findIndex(img => img.id === id);
+        if (index !== -1 && lightbox) {
+          setTimeout(() => {
+            const links = document.querySelectorAll('.grid a');
+            if (links[index]) {
+              links[index].click();
+            }
+          }, 500);
+        }
+      }
+    }
+
+    // Notify parent iframe of height changes
+    function notifyHeight() {
+      if (window.parent !== window) {
+        const height = document.body.scrollHeight;
+        window.parent.postMessage({
+          type: 'spd-gallery-height',
+          value: height
+        }, '*');
+      }
+    }
+
+    // Initialize
+    function init() {
+      initFuse();
+      populateFilters();
+      populateHashtags();
+      attachListeners();
+      renderGallery();
+      handleDeepLink();
+
+      // Observe size changes
+      const resizeObserver = new ResizeObserver(() => notifyHeight());
+      resizeObserver.observe(document.body);
+    }
+
+    // Run on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
